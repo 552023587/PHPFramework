@@ -1,0 +1,26 @@
+{
+"name":             "allen/test",
+"description":      "another e-commerce website",
+"keywords":         ["test", "online shop", "good"],
+"homepage":         "http://www.youth8090.com",
+"time":             "2016-6-8",
+"license":          "MIT",
+"require": {
+     "phpunit/phpunit": "^4.2",
+     "phpoffice/phpexcel": "~1.8.1",
+	 "curl/curl":"~1.4"
+},
+"authors": [
+    {
+        "name":         "allen",
+        "email":        "552023587@qq.com",
+        "homepage":     "http://www.youth8090.com",
+        "role":         "Engineer"
+    }
+],
+"autoload":{
+     "psr-0":{
+        "System\\":""
+    }
+}
+}

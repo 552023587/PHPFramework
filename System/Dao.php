@@ -27,6 +27,7 @@ class Dao{
         self::$model = explode('\\',$model)[2];
         try {
         self::$db = new \PDO(self::$config['type'].":host=".self::$config['host'].";dbname=".self::$config['dbname'],self::$config['name'],self::$config['pwd'],array(\PDO::ATTR_PERSISTENT => true)); 
+        self::$db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         self::$db->query('set names utf8;');
         }catch (Exception $e) {
            die('Connection failed:'. $e->getMessage()); 

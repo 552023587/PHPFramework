@@ -7,7 +7,7 @@ use System\Controller;
 class Index extends Controller{
  public function Index(){
     //加载一个用户数据模型
-    $list = $this->loadModel("user")->select();
+    //$lists = $this->loadModel("user")->select();
     if($this->isPost())
     {
         echo "post";

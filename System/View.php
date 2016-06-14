@@ -10,15 +10,15 @@
 namespace System;
 class View {
     //put your code here
-    private  $complate_file = 'View/tmp/';
+    private  $complate_file = '/View/tmp/';
     private  $static_file;
     private  $template_preg;
     private  $template_replace;
     private  $data;
     public function __construct($view,$data=array()) {
            $view = explode("/",$view);
-           $this->static_file = "View/$view[0]/$view[1]/$view[2].html";
-           $this->complate_file = $this->complate_file."com_".$view[0]."_".$view[1].'.php';  
+           $this->static_file = __APP__."/".$view[0]."/View/$view[0]/$view[1]/$view[2].html";
+           $this->complate_file =  __APP__."/".$view[0].$this->complate_file."com_".$view[0]."_".$view[1].'.php';  
            $this->data = $data;
            $this->TemplateTag();
     }

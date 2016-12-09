@@ -2,7 +2,7 @@
 /**
  * 这是一个栗子
  */
-namespace Home\Controller;
+namespace Controller\Home;
 use System\Controller;
 class Index extends Controller{
  public function Index(){

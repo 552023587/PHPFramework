@@ -8,26 +8,12 @@
  * @allen 552023587@qq.com http://framework.youth8090,com
  */
 namespace System;
+use System\Dao;
 abstract class Model {
     
-    private $db;
-    public function __construct(){      
-        $this->db = Dao::connect(get_class($this));              
-    }
-    public function select(){
-        return $this->db->select();
-    }
-    public function where($where = array()){
-        return $this->db->where($where);
-    }
-    public function insert($parame=array()){
-        return $this->db->insert($parame);
-    }
-    public function update(){
-        return $this->db->update($parame=array());
-    }
-    public function delete(){
-        return $this->db->delete();
+    public static function Instance(){
+        $child  = new \ReflectionClass(get_class(self));
+        return  new Dao($child::db_table);              
     }
     
 }

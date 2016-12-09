@@ -14,7 +14,7 @@ class Route {
         $module = $config["module"];
         $controllers =  $config["controller"];
         $method  =  $config["method"];
-        $Class =  __APP__.$module."/Controller/".$controllers.".php";
+        $Class =  __APP__."Controller/".$module."/".$controllers.".php";
         if(!is_dir(__APP__.$module))
         {
              throw  new \Exception("模块不存在");  
@@ -22,7 +22,7 @@ class Route {
         if(file_exists($Class))
         {
            require $Class;
-           $controllers = "{$module}\Controller\\$controllers";
+           $controllers = "Controller\\$module\\$controllers";
            $obj = new $controllers();
            if(!method_exists($obj,$method))
            {
